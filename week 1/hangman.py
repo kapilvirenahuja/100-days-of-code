@@ -1,6 +1,7 @@
 import random
+from hangman_art import stages, logo
 
-print ("This is a game - The Hangman")
+print (logo)
 
 # generate random word
 words = ["apple", "banana", "orange", "pear", "grape", "pineapple", "mango", "strawberry", "blueberry", "raspberry"]
@@ -58,11 +59,10 @@ while True:
     else:
         print(f"The letter {letter} is not in the word.")
         generate_hangman(guessed_chosen_word)
+
         tries += 1
         if tries == 7:
-            print(f"You have not been able to guess the word {chosen_word}. You just lost the game. You guessed the letters {guessed_letters}.")
-            print (set(chosen_word))
-            print (set(guessed_letters))
+            print(f"You have not been able to guess the word {chosen_word}. You just lost the game.")
             break
         else:
             print(f"You have {7 - tries} tries left.")
